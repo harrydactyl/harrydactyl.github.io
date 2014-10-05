@@ -1,0 +1,247 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1265.21">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"&gt;&lt;/script&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;body&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div id="heading"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">         </span>&lt;h1&gt;&lt;u&gt;Harry's Dynamic Quiz&lt;/u&gt;&lt;/h1&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;br&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div id="greeting"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;input type='text' id="username" value='Type your name here!'&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;br&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;br&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div id="entireQuiz"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;br&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>Type in your name and press next to get started!!</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;br&gt;&lt;br&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;button type="button" onclick="next()"&gt;Next&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;br&gt;&lt;br&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p2"><br></p>
+<p class="p2"><br></p>
+<p class="p1">&lt;script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>var quiz = {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>"questions": [{</p>
+<p class="p1"><span class="Apple-converted-space">        </span>"question": "What year was Trinity founded?",</p>
+<p class="p1"><span class="Apple-converted-space">            </span>"1": "1910",</p>
+<p class="p1"><span class="Apple-converted-space">            </span>"2": "1709",</p>
+<p class="p1"><span class="Apple-converted-space">            </span>"3": "1802",</p>
+<p class="p1"><span class="Apple-converted-space">            </span>"4": "1950",</p>
+<p class="p1"><span class="Apple-converted-space">            </span>"5": "1800",</p>
+<p class="p1"><span class="Apple-converted-space">            </span>"correct": "1709"</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}, {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>"question": "What is Trinity's student:teacher ratio?",</p>
+<p class="p1"><span class="Apple-converted-space">            </span>"1": "6:1",</p>
+<p class="p1"><span class="Apple-converted-space">            </span>"2": "5:1",</p>
+<p class="p1"><span class="Apple-converted-space">            </span>"3": "10:1",</p>
+<p class="p1"><span class="Apple-converted-space">            </span>"correct": "6:1"</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}, {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>"question": "What are Trinity's school colors?",</p>
+<p class="p1"><span class="Apple-converted-space">            </span>"1": "Blue and Gold",</p>
+<p class="p1"><span class="Apple-converted-space">            </span>"2": "White and Blue",</p>
+<p class="p1"><span class="Apple-converted-space">            </span>"3": "Green and Gold",</p>
+<p class="p1"><span class="Apple-converted-space">            </span>"4": "Purple and White",</p>
+<p class="p1"><span class="Apple-converted-space">            </span>"correct": "Blue and Gold"</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}, {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>"question": "How big is the Trinity senate?",</p>
+<p class="p1"><span class="Apple-converted-space">            </span>"1": "8 students",</p>
+<p class="p1"><span class="Apple-converted-space">            </span>"2": "4 students",</p>
+<p class="p1"><span class="Apple-converted-space">            </span>"3": "16 students",</p>
+<p class="p1"><span class="Apple-converted-space">            </span>"correct": "16 students"</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}, {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>"question": "How many varsity teams does the upper school have in the winter season?",</p>
+<p class="p1"><span class="Apple-converted-space">            </span>"1": "8 teams",</p>
+<p class="p1"><span class="Apple-converted-space">            </span>"2": "6 teams",</p>
+<p class="p1"><span class="Apple-converted-space">            </span>"3": "4 teams",</p>
+<p class="p1"><span class="Apple-converted-space">            </span>"4": "5 teams",</p>
+<p class="p1"><span class="Apple-converted-space">            </span>"5": "7 teams",</p>
+<p class="p1"><span class="Apple-converted-space">            </span>"correct": "6 teams"</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}, {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>"question": "On what street is Trinity located?",</p>
+<p class="p1"><span class="Apple-converted-space">            </span>"1": "91st st",</p>
+<p class="p1"><span class="Apple-converted-space">            </span>"2": "100th",</p>
+<p class="p1"><span class="Apple-converted-space">            </span>"3": "84th",</p>
+<p class="p1"><span class="Apple-converted-space">            </span>"correct": "91st"</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}, {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>"question": "On what floor is Trinity's math lab",</p>
+<p class="p1"><span class="Apple-converted-space">            </span>"1": "The first floor",</p>
+<p class="p1"><span class="Apple-converted-space">            </span>"2": "The third floor",</p>
+<p class="p1"><span class="Apple-converted-space">            </span>"3": "The second floor",</p>
+<p class="p1"><span class="Apple-converted-space">            </span>"4": "The basement",</p>
+<p class="p1"><span class="Apple-converted-space">            </span>"correct": "The second floor"</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}, {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>"question": "How many semester(s) of art does the Upper School require?",</p>
+<p class="p1"><span class="Apple-converted-space">            </span>"1": "Three semesters",</p>
+<p class="p1"><span class="Apple-converted-space">            </span>"2": "One semester",</p>
+<p class="p1"><span class="Apple-converted-space">            </span>"3": "Two semesters",</p>
+<p class="p1"><span class="Apple-converted-space">            </span>"4": "No semesters of art are required",</p>
+<p class="p1"><span class="Apple-converted-space">            </span>"correct": "Three semesters"</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}, {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>"question": "How many pool(s) does Trinity have?",</p>
+<p class="p1"><span class="Apple-converted-space">            </span>"1": "One pool",</p>
+<p class="p1"><span class="Apple-converted-space">            </span>"2": "Two pools",</p>
+<p class="p1"><span class="Apple-converted-space">            </span>"3": "No pools",</p>
+<p class="p1"><span class="Apple-converted-space">            </span>"correct": "Two pools"</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}, {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>"question": "Which Canadian province is part of Trinity's global travel program?",</p>
+<p class="p1"><span class="Apple-converted-space">            </span>"1": "British Columbia",</p>
+<p class="p1"><span class="Apple-converted-space">            </span>"2": "Ontario",</p>
+<p class="p1"><span class="Apple-converted-space">            </span>"3": "Quebec",</p>
+<p class="p1"><span class="Apple-converted-space">            </span>"correct": "Quebec"</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}] // End "accounting" array. <span class="Apple-converted-space">                                 </span></p>
+<p class="p2"><br></p>
+<p class="p1">} // End quiz</p>
+<p class="p2"><br></p>
+<p class="p1">var current = -1;</p>
+<p class="p1">var score= new Array(quiz.questions.length);</p>
+<p class="p2"><span class="Apple-converted-space">    </span></p>
+<p class="p1">function next() {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>var choice;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>var didTheUserCheckSomething=false;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>var radios = document.getElementsByName("choice");</p>
+<p class="p2"><span class="Apple-converted-space">    </span></p>
+<p class="p1"><span class="Apple-converted-space">    </span>for (i = 0; i &lt; radios.length; i++) {<span class="Apple-converted-space">       </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>if (radios[i].checked) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>didTheUserCheckSomething=true;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>choice=quiz.questions[current][i+1];</p>
+<p class="p1"><span class="Apple-converted-space">            </span>correct=quiz.questions[current].correct;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if(choice==correct){</p>
+<p class="p1"><span class="Apple-converted-space">                </span>score[current]=1;//using an array helps with the back button</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>//alert("You chose "+quiz.questions[current][i+1]+"! Nice choice!");</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>if(didTheUserCheckSomething==true || current==-1){</p>
+<p class="p1"><span class="Apple-converted-space">        </span>//$.("entireQuiz").fadeOut("fast");//not working properly+can't fix</p>
+<p class="p1"><span class="Apple-converted-space">        </span>current += 1;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>show();</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">function back() {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>if (current != 0) {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>score[current-1]=0;//reset the score from the last question</p>
+<p class="p1"><span class="Apple-converted-space">        </span>current -= 1;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>show();</p>
+<p class="p1">}</p>
+<p class="p2"><span class="Apple-converted-space">    </span></p>
+<p class="p1">function show() {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>if(current&lt;quiz.questions.length){</p>
+<p class="p1"><span class="Apple-converted-space">        </span>var html = "";</p>
+<p class="p1"><span class="Apple-converted-space">        </span>//alert(quiz.questions[current][1]);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>//alert("working0");</p>
+<p class="p1"><span class="Apple-converted-space">        </span>html += "&lt;br&gt; &lt;b&gt;&lt;u&gt;" + quiz.questions[current].question + "&lt;/u&gt;&lt;/b&gt;&lt;br&gt;&lt;br&gt;";</p>
+<p class="p1"><span class="Apple-converted-space">        </span>//alert("working0");</p>
+<p class="p1"><span class="Apple-converted-space">        </span>var size=howLong();</p>
+<p class="p1"><span class="Apple-converted-space">        </span>//howLong();</p>
+<p class="p1"><span class="Apple-converted-space">        </span>//alert("working1");</p>
+<p class="p1"><span class="Apple-converted-space">        </span>for (i = 1; i &lt;=size; i++) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>//alert("working2");</p>
+<p class="p1"><span class="Apple-converted-space">            </span>//alert(quiz.questions[current].length);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>var num = i.toString();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>console.log(num + ": " + quiz.questions[current][i]);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>html += "&lt;input type=\"radio\" name=\"choice\"&gt;";</p>
+<p class="p1"><span class="Apple-converted-space">            </span>html += quiz.questions[current][i];</p>
+<p class="p1"><span class="Apple-converted-space">            </span>html += "&lt;br&gt;&lt;br&gt;";</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>html += "&lt;button type=\"button\" onclick=\"back()\"&gt;Back&lt;/button&gt;&lt;button type=\"button\" onclick=\"next()\"&gt;Next&lt;/button&gt;&lt;br&gt;&lt;br&gt;";</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>document.getElementById("entireQuiz").innerHTML = html;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>document.getElementById("greeting").innerHTML= "&lt;br&gt;"+"You're so smart! I know you'll get a perfect score, "+document.getElementById("username").value+"."+"&lt;br&gt;&lt;br&gt;";</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><span class="Apple-converted-space">    </span></p>
+<p class="p1"><span class="Apple-converted-space">    </span>else{</p>
+<p class="p1"><span class="Apple-converted-space">        </span>document.getElementById("greeting").innerHTML="&lt;br&gt;&lt;br&gt;Nice work! Here's your score!&lt;br&gt;&lt;br&gt;&lt;br&gt;";</p>
+<p class="p1"><span class="Apple-converted-space">        </span>var totalScore=0;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>for(i=0; i&lt;score.length; i++){</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if(score[i]==1){</p>
+<p class="p1"><span class="Apple-converted-space">                </span>totalScore+=1;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}//total up the score</p>
+<p class="p1"><span class="Apple-converted-space">        </span>var scorepage = "&lt;br&gt;&lt;br&gt;Your final score is "+totalScore+"!&lt;br&gt;&lt;br&gt;";</p>
+<p class="p1"><span class="Apple-converted-space">        </span>scorepage+="&lt;canvas id=\"canvas\" width=\"200\" height=\"150\"&gt;&lt;/canvas&gt;";</p>
+<p class="p1"><span class="Apple-converted-space">        </span>scorepage+="&lt;br&gt;"+100*totalScore/quiz.questions.length+"%&lt;br&gt;&lt;br&gt;";</p>
+<p class="p1"><span class="Apple-converted-space">        </span>document.getElementById("entireQuiz").innerHTML= scorepage;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>var my_canvas;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>my_canvas=document.getElementById("canvas");</p>
+<p class="p1"><span class="Apple-converted-space">        </span>var context;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>context=my_canvas.getContext("2d");</p>
+<p class="p1"><span class="Apple-converted-space">        </span>context.beginPath();</p>
+<p class="p1"><span class="Apple-converted-space">        </span>context.fillStyle="#FF4000";</p>
+<p class="p1"><span class="Apple-converted-space">        </span>context.beginPath();</p>
+<p class="p1"><span class="Apple-converted-space">        </span>context.arc(100,75,60,0,2*Math.PI);//full circle</p>
+<p class="p1"><span class="Apple-converted-space">        </span>context.closePath();</p>
+<p class="p1"><span class="Apple-converted-space">        </span>context.fill();</p>
+<p class="p1"><span class="Apple-converted-space">        </span>context.stroke();</p>
+<p class="p1"><span class="Apple-converted-space">        </span>context.fillStyle="#00BFFF";</p>
+<p class="p1"><span class="Apple-converted-space">        </span>context.stroke();</p>
+<p class="p1"><span class="Apple-converted-space">        </span>context.beginPath();</p>
+<p class="p1"><span class="Apple-converted-space">        </span>context.arc(100,75,60,0,2*Math.PI*totalScore/quiz.questions.length);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>context.closePath();</p>
+<p class="p1"><span class="Apple-converted-space">        </span>context.fill();</p>
+<p class="p1"><span class="Apple-converted-space">        </span>context.stroke();</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1">}//end show()</p>
+<p class="p2"><br></p>
+<p class="p1">function howLong(){</p>
+<p class="p1"><span class="Apple-converted-space">    </span>var size=0;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>for (i = 0; i &lt; 1000; i++) {//DYNAMIC!!</p>
+<p class="p1"><span class="Apple-converted-space">        </span>if(quiz.questions[current][i+1]==undefined){</p>
+<p class="p1"><span class="Apple-converted-space">            </span>return size;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>else{</p>
+<p class="p1"><span class="Apple-converted-space">            </span>size=size+1;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1">}</p>
+<p class="p2"><span class="Apple-converted-space">    </span></p>
+<p class="p1">&lt;/script&gt;</p>
+<p class="p2"><span class="Apple-converted-space">    </span></p>
+<p class="p1">&lt;style&gt;</p>
+<p class="p1">#heading {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>background-color: #5F04B4;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>color: #FFFFFF;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>border-radius: 5px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>border: 5px solid #4C0B5F;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>font-size: 130%;</p>
+<p class="p1">}</p>
+<p class="p1">#greeting {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>background-color: #FF8000;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>border-radius: 5px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>border: 5px solid #8A4B08;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>font-size: 90%;</p>
+<p class="p1">}</p>
+<p class="p1">#entireQuiz {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>background-color: #86B404;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>color: #000000;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>border-radius: 5px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>border: 5px solid #088A4B;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>font-size: 100%;</p>
+<p class="p1">}</p>
+<p class="p1">#choices {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>text-align: center;</p>
+<p class="p1">}</p>
+<p class="p1">&lt;/style&gt;</p>
+</body>
+</html>
