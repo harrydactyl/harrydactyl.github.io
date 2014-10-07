@@ -1,5 +1,5 @@
 src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"//import jQuery
-    var quiz = {
+var quiz = {
     "questions": [{
         "question": "What year was Trinity founded?",
             "1": "1910",
@@ -71,16 +71,31 @@ src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"//import j
 
 } // End quiz
 
-/*
-var quiz=[];
+/*var quiz=[];
 $(document).ready(function(){
     $.getJSON("questions.json", function(result) {
         quiz = result;
     });
 });
-alert("Working!!!");
-*/
+alert("Working!!!");*/
 
+/*
+var quiz;
+$(document).ready(function(){
+$.getJSON("questions.JSON", function(callback) {
+    quiz = callback 
+});
+$("h1").text(text.Qs[0].prompt );
+});
+*/
+var current=-1;
+var score= new Array(quiz.questions.length);
+function next() {
+    var choice;
+    var didTheUserCheckSomething=false;
+    var radios = document.getElementsByName("choice");
+    for (i = 0; i<radios.length; i++) {
+        if (radios[i].checked) {
             didTheUserCheckSomething=true;
             choice=quiz.questions[current][i+1];
             correct=quiz.questions[current].correct;
