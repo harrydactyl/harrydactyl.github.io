@@ -1,4 +1,4 @@
-var quiz = {
+{
     "questions": [{
         "question": "What year was Trinity founded?",
             "1": "1910",
