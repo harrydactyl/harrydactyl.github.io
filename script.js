@@ -1,15 +1,17 @@
 src = "http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js";//import jQuery
 
 var quiz;
-var current=-1;
 
+alert("working 1");
 $(document).ready(function(){
+    alert("working 2");
     var getData= $.getJSON("questions.json", function(data) {
         quiz = data;
     });
 });//end jQuery
 
 var score= new Array(quiz.questions.length);
+var current=-1;
 
 function next() {
     localStorage();
