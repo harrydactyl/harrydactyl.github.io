@@ -8,9 +8,7 @@ $(document).ready(function(){
         quiz = data;
     });
 });//end jQuery
-
-alert("working");
-
+alert(quiz);
 var score= new Array(quiz.questions.length);
 var current=-1;
 
