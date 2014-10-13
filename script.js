@@ -3,11 +3,13 @@
 var quiz;
 
 $(document).ready(function(){
-    var getData= $.getJSON("questions.json", function(data) {
-        //alert("working");
+        var data;
+        data= $.getJSON("questions.json", function(data) {
         quiz = data;
     });
 });//end jQuery
+
+alert("working");
 
 var score= new Array(quiz.questions.length);
 var current=-1;
