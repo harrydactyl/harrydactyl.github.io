@@ -1,4 +1,4 @@
-src = "jQuery.js";//import jQuery
+//src = "jQuery.js";//import jQuery
 
 var quiz;
 
