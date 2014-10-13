@@ -1,96 +1,18 @@
-src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"//import jQuery
-var quiz = {
-    "questions": [{
-        "question": "What year was Trinity founded?",
-            "1": "1910",
-            "2": "1709",
-            "3": "1802",
-            "4": "1950",
-            "5": "1800",
-            "correct": "1709"
-    }, {
-        "question": "What is Trinity's student:teacher ratio?",
-            "1": "6:1",
-            "2": "5:1",
-            "3": "10:1",
-            "correct": "6:1"
-    }, {
-        "question": "What are Trinity's school colors?",
-            "1": "Blue and Gold",
-            "2": "White and Blue",
-            "3": "Green and Gold",
-            "4": "Purple and White",
-            "correct": "Blue and Gold"
-    }, {
-        "question": "How big is the Trinity senate?",
-            "1": "8 students",
-            "2": "4 students",
-            "3": "16 students",
-            "correct": "16 students"
-    }, {
-        "question": "How many varsity teams does the upper school have in the winter season?",
-            "1": "8 teams",
-            "2": "6 teams",
-            "3": "4 teams",
-            "4": "5 teams",
-            "5": "7 teams",
-            "correct": "6 teams"
-    }, {
-        "question": "On what street is Trinity located?",
-            "1": "91st st",
-            "2": "100th",
-            "3": "84th",
-            "correct": "91st"
-    }, {
-        "question": "On what floor is Trinity's math lab",
-            "1": "The first floor",
-            "2": "The third floor",
-            "3": "The second floor",
-            "4": "The basement",
-            "correct": "The second floor"
-    }, {
-        "question": "How many semester(s) of art does the Upper School require?",
-            "1": "Three semesters",
-            "2": "One semester",
-            "3": "Two semesters",
-            "4": "No semesters of art are required",
-            "correct": "Three semesters"
-    }, {
-        "question": "How many pool(s) does Trinity have?",
-            "1": "One pool",
-            "2": "Two pools",
-            "3": "No pools",
-            "correct": "Two pools"
-    }, {
-        "question": "Which Canadian province is part of Trinity's global travel program?",
-            "1": "British Columbia",
-            "2": "Ontario",
-            "3": "Quebec",
-            "correct": "Quebec"
-    }] // End array.                                  
+src = "http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js";//import jQuery
 
-} // End quiz
-
-/*var quiz=[];
-$(document).ready(function(){
-    $.getJSON("questions.json", function(result) {
-        quiz = result;
-    });
-});
-alert("Working!!!");*/
-
-/*
 var quiz;
-$(document).ready(function(){
-$.getJSON("questions.JSON", function(callback) {
-    quiz = callback 
-});
-$("h1").text(text.Qs[0].prompt );
-});
-*/
 var current=-1;
+
+$(document).ready(function(){
+    var getData= $.getJSON("questions.json", function(data) {
+        quiz = data;
+    });
+});//end jQuery
+
 var score= new Array(quiz.questions.length);
+
 function next() {
+    localStorage();
     var choice;
     var didTheUserCheckSomething=false;
     var radios = document.getElementsByName("choice");
@@ -191,3 +113,37 @@ function howLong(){
         }
     }
 }
+
+function localStorage(){
+    localStorage.setItem("nombre", "Smith");
+    localStorage.setItem("pass", "123");
+    document.getElementById("username").innerHTML = localStorage.getItem("nombre"+"pass");
+}
+
+/*cool
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function clickCounter() {
+    if(typeof(Storage) !== "undefined") {
+        if (localStorage.clickcount) {
+            localStorage.clickcount = Number(localStorage.clickcount)+1;
+        } else {
+            localStorage.clickcount = 1;
+        }
+        document.getElementById("result").innerHTML = "You have clicked the button " + localStorage.clickcount + " time(s).";
+    } else {
+        document.getElementById("result").innerHTML = "Sorry, your browser does not support web storage...";
+    }
+}
+</script>
+</head>
+<body>
+<p><button onclick="clickCounter()" type="button">Click me!</button></p>
+<div id="result"></div>
+<p>Click the button to see the counter increase.</p>
+<p>Close the browser tab (or window), and try again, and the counter will continue to count (is not reset).</p>
+</body>
+</html>
+*/
