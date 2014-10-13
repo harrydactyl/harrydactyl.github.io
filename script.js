@@ -2,10 +2,9 @@
 
 var quiz;
 
-alert("working 1");
 $(document).ready(function(){
-    alert("working 2");
     var getData= $.getJSON("questions.json", function(data) {
+        //alert("working");
         quiz = data;
     });
 });//end jQuery
