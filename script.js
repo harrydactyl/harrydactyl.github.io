@@ -1,4 +1,4 @@
-src = "http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js";//import jQuery
+src = "jQuery.js";//import jQuery
 
 var quiz;
 
