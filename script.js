@@ -82,7 +82,6 @@ alert(quiz);
 
 var score= new Array(quiz.questions.length);
 var current=-1;
-alert(localStorage.getItem("accountExists"));
 
 function firstNext() {
     if(localStorage.getItem("accountExists")=="true"){
@@ -177,13 +176,14 @@ function show() {
         }//total up the score
         var setter=localStorage.getItem("scores")
         setter+=totalScore
-        setter+=","
+        setter+=", "
         setter+=localStorage.getItem("usernamee")+"<br>";
         localStorage.setItem("scores",setter);
         document.getElementById("greeting").innerHTML="<br><br>Nice work! Here's your score!<br><br><br>";
         var scorepage = "<br><br>Your final score is "+totalScore+"!<br><br>";
         scorepage+="<canvas id=\"canvas\" width=\"200\" height=\"150\"></canvas>";
         scorepage+="<br>"+100*totalScore/quiz.questions.length+"%<br><br>";
+        scorepage+="Scores:"+"<br>"
         scorepage+=localStorage.getItem("scores");
         document.getElementById("entireQuiz").innerHTML= scorepage;
         var my_canvas;
