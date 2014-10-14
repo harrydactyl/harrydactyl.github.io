@@ -82,6 +82,7 @@ alert(quiz);
 
 var score= new Array(quiz.questions.length);
 var current=-1;
+alert(localStorage.getItem("accountExists"));
 
 function firstNext() {
     if(localStorage.getItem("accountExists")==true){
@@ -222,9 +223,9 @@ function signUp(){
 }
 
 function logIn(){ 
+    alert("logging in");
     if(document.getElementById("username").value==localStorage.getItem("usernamee")&&  document.getElementById("password").value==localStorage.getItem("pass")){
         alert("logged in");
-        next();
     }
     else{//don't let them take the quiz
         alert("you didn't do it right");
