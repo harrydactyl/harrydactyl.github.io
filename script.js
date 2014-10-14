@@ -85,7 +85,7 @@ var current=-1;
 alert(localStorage.getItem("accountExists"));
 
 function firstNext() {
-    if(localStorage.getItem("accountExists")==true){
+    if(localStorage.getItem("accountExists")=="true"){
         logIn();
     }
     else{
@@ -170,6 +170,14 @@ function show() {
     }
     
     else{
+        var setter=localStorage.getItem("scores")
+        setter+=totalScore
+        setter+=","
+        alert("it worked 3");
+        setter+=document.getElementById("username").value;//problematic fave
+        alert("it worked 4");
+        localStorage.setItem("scores",setter);
+        alert("it all worked");
         document.getElementById("greeting").innerHTML="<br><br>Nice work! Here's your score!<br><br><br>";
         var totalScore=0;
         for(i=0; i<score.length; i++){
@@ -180,6 +188,7 @@ function show() {
         var scorepage = "<br><br>Your final score is "+totalScore+"!<br><br>";
         scorepage+="<canvas id=\"canvas\" width=\"200\" height=\"150\"></canvas>";
         scorepage+="<br>"+100*totalScore/quiz.questions.length+"%<br><br>";
+        scorepage+=localStorage.getItem("scores");
         document.getElementById("entireQuiz").innerHTML= scorepage;
         var my_canvas;
         my_canvas=document.getElementById("canvas");
@@ -218,7 +227,7 @@ function howLong(){
 function signUp(){
     localStorage.setItem("usernamee", document.getElementById("username").value);
     localStorage.setItem("pass", document.getElementById("password").value);
-    localStorage.setItem("accountExists",true);
+    localStorage.setItem("accountExists","true");
     alert("you now have an account!");
 }
 
@@ -228,6 +237,6 @@ function logIn(){
         alert("logged in");
     }
     else{//don't let them take the quiz
-        alert("you didn't do it right");
+        alert("creating a new account and replacing your old one!");
     }
 }
