@@ -165,26 +165,22 @@ function show() {
         html += "<button type=\"button\" onclick=\"back()\">Back</button><button type=\"button\" onclick=\"next()\">Next</button><br><br>";
 
         document.getElementById("entireQuiz").innerHTML = html;
-
         document.getElementById("greeting").innerHTML= "<br>"+"You're so smart! I know you'll get a perfect score, "+document.getElementById("username").value+"."+"<br><br>";
     }
     
     else{
-        var setter=localStorage.getItem("scores")
-        setter+=totalScore
-        setter+=","
-        alert("it worked 3");
-        setter+=document.getElementById("username").value;//problematic fave
-        alert("it worked 4");
-        localStorage.setItem("scores",setter);
-        alert("it all worked");
-        document.getElementById("greeting").innerHTML="<br><br>Nice work! Here's your score!<br><br><br>";
         var totalScore=0;
         for(i=0; i<score.length; i++){
             if(score[i]==1){
                 totalScore+=1;
             }
         }//total up the score
+        var setter=localStorage.getItem("scores")
+        setter+=totalScore
+        setter+=","
+        setter+=localStorage.getItem("usernamee")+"<br>";
+        localStorage.setItem("scores",setter);
+        document.getElementById("greeting").innerHTML="<br><br>Nice work! Here's your score!<br><br><br>";
         var scorepage = "<br><br>Your final score is "+totalScore+"!<br><br>";
         scorepage+="<canvas id=\"canvas\" width=\"200\" height=\"150\"></canvas>";
         scorepage+="<br>"+100*totalScore/quiz.questions.length+"%<br><br>";
@@ -228,7 +224,7 @@ function signUp(){
     localStorage.setItem("usernamee", document.getElementById("username").value);
     localStorage.setItem("pass", document.getElementById("password").value);
     localStorage.setItem("accountExists","true");
-    alert("you now have an account!");
+    alert("you now have your first account!");
 }
 
 function logIn(){ 
@@ -237,6 +233,6 @@ function logIn(){
         alert("logged in");
     }
     else{//don't let them take the quiz
-        alert("creating a new account and replacing your old one!");
+        alert("creating a new account");
     }
 }
