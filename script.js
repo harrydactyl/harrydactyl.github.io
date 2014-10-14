@@ -83,6 +83,34 @@ alert(quiz);
 var score= new Array(quiz.questions.length);
 var current=-1;
 
+function firstNext() {
+    if(localStorage.getItem("accountExists")==true){
+        logIn();
+    }
+    else{
+        signUp();
+    }
+    var choice;
+    var didTheUserCheckSomething=false;
+    var radios = document.getElementsByName("choice");
+    for (i = 0; i<radios.length; i++) {
+        if (radios[i].checked) {
+            didTheUserCheckSomething=true;
+            choice=quiz.questions[current][i+1];
+            correct=quiz.questions[current].correct;
+            if(choice==correct){
+                score[current]=1;//using an array helps with the back button
+            }
+            //alert("You chose "+quiz.questions[current][i+1]+"! Nice choice!");
+        }
+    }
+    if(didTheUserCheckSomething==true || current==-1){
+        //$.("entireQuiz").fadeOut("fast");//not working properly+can't fix
+        current += 1;
+        show();
+    }
+}
+
 function next() {
     //localStorage();
     var choice;
@@ -186,11 +214,19 @@ function howLong(){
     }
 }
 
-function createAccount(){
+function signUp(){
     localStorage.setItem("usernamee", document.getElementById("username").value);
     localStorage.setItem("pass", document.getElementById("password").value);
+    localStorage.setItem("accountExists",true);
+    alert("you now have an account!");
 }
 
-function logIn(){
-    
+function logIn(){ 
+    if(document.getElementById("username").value==localStorage.getItem("usernamee")&&  document.getElementById("password").value==localStorage.getItem("pass")){
+        alert("logged in");
+        next();
+    }
+    else{//don't let them take the quiz
+        alert("you didn't do it right");
+    }
 }
