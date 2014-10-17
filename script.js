@@ -8,7 +8,8 @@ var quiz={
             "3": "1802",
             "4": "1950",
             "5": "1800",
-            "correct": "1709"
+            "correct": "1709",
+        "image": "\"http://bit.ly/1rCQEUQ\""
     }, {
         "question": "What is Trinity's student:teacher ratio?",
             "1": "6:1",
@@ -161,6 +162,8 @@ function show() {
             html += quiz.questions[current][i];
             html += "<br><br>";
         }
+        html+="<img src="+quiz.questions[current].image+" width=\"300\" height=\"300\">"
+        html += "<br><br>";
         html += "<button type=\"button\" onclick=\"back()\">Back</button><button type=\"button\" onclick=\"next()\">Next</button><br><br>";
 
         document.getElementById("entireQuiz").innerHTML = html;

@@ -6,13 +6,14 @@
             "3": "1802",
             "4": "1950",
             "5": "1800",
-            "correct": "1709"
+            "correct": "1709",
+        "image": <img src="http://bit.ly/1rCQEUQ" width="300" height="300">
     }, {
         "question": "What is Trinity's student:teacher ratio?",
             "1": "6:1",
             "2": "5:1",
             "3": "10:1",
-            "correct": "6:1"
+            "correct": "6:1",
     }, {
         "question": "What are Trinity's school colors?",
             "1": "Blue and Gold",
