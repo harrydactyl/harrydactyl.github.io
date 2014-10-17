@@ -9,26 +9,29 @@ var quiz={
             "4": "1950",
             "5": "1800",
             "correct": "1709",
-        "image": "\"http://bit.ly/1rCQEUQ\""
+        "image": "\"http://bit.ly/1sNZSTt\""
     }, {
         "question": "What is Trinity's student:teacher ratio?",
             "1": "6:1",
             "2": "5:1",
             "3": "10:1",
-            "correct": "6:1"
+            "correct": "6:1",
+        "image": "\"http://bit.ly/1tyx6Zf\""
     }, {
         "question": "What are Trinity's school colors?",
             "1": "Blue and Gold",
             "2": "White and Blue",
             "3": "Green and Gold",
             "4": "Purple and White",
-            "correct": "Blue and Gold"
+            "correct": "Blue and Gold",
+        "image": "\"http://bit.ly/1weGJvf\""
     }, {
         "question": "How big is the Trinity senate?",
             "1": "8 students",
             "2": "4 students",
             "3": "16 students",
-            "correct": "16 students"
+            "correct": "16 students",
+        "image": "\"http://bit.ly/1sO0wjS\""
     }, {
         "question": "How many varsity teams does the upper school have in the winter season?",
             "1": "8 teams",
@@ -36,39 +39,45 @@ var quiz={
             "3": "4 teams",
             "4": "5 teams",
             "5": "7 teams",
-            "correct": "6 teams"
+            "correct": "6 teams",
+        "image": "\"http://bit.ly/1vkcwe6\""
     }, {
         "question": "On what street is Trinity located?",
             "1": "91st st",
             "2": "100th",
             "3": "84th",
-            "correct": "91st"
+            "correct": "91st",
+        "image": "\"http://bit.ly/ZwJZoC\""
     }, {
         "question": "On what floor is Trinity's math lab",
             "1": "The first floor",
             "2": "The third floor",
             "3": "The second floor",
             "4": "The basement",
-            "correct": "The second floor"
+            "correct": "The second floor",
+        "image": "\"http://bit.ly/1F7lAHr\""
     }, {
         "question": "How many semester(s) of art does the Upper School require?",
             "1": "Three semesters",
             "2": "One semester",
             "3": "Two semesters",
             "4": "No semesters of art are required",
-            "correct": "Three semesters"
+            "correct": "Three semesters",
+        "image": "\"http://bit.ly/1F7lT50\""
     }, {
         "question": "How many pool(s) does Trinity have?",
             "1": "One pool",
             "2": "Two pools",
             "3": "No pools",
-            "correct": "Two pools"
+            "correct": "Two pools",
+        "image": "\"http://bit.ly/ZGQDcv\""
     }, {
         "question": "Which Canadian province is part of Trinity's global travel program?",
             "1": "British Columbia",
             "2": "Ontario",
             "3": "Quebec",
-            "correct": "Quebec"
+            "correct": "Quebec",
+        "image": "\"http://bit.ly/1sWk0TQ\""
     }]                                  
 
 }
@@ -162,7 +171,8 @@ function show() {
             html += quiz.questions[current][i];
             html += "<br><br>";
         }
-        html+="<img src="+quiz.questions[current].image+" width=\"300\" height=\"300\">"
+        //html+="<img src="+quiz.questions[current].image+" width=\"200\" height=\"200\">"
+        html+="<img src="+quiz.questions[current].image+">"
         html += "<br><br>";
         html += "<button type=\"button\" onclick=\"back()\">Back</button><button type=\"button\" onclick=\"next()\">Next</button><br><br>";
 
