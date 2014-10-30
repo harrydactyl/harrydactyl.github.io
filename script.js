@@ -158,20 +158,12 @@ function show() {
         html += "<br> <b><u>" + quiz.questions[current].question + "</u></b><br><br>";
         //alert("working0");
         var size=howLong();
-        //howLong();
-        //alert("working1");
         for (i = 1; i <=size; i++) {
-            //alert("working2");
-            //alert(quiz.questions[current].length);
             var num = i.toString();
             console.log(num + ": " + quiz.questions[current][i]);
             html += "<input type=\"radio\" name=\"choice\">";
-            html += quiz.questions[current][i];
             html += "<br><br>";
         }
-        //html+="<img src="+quiz.questions[current].image+" width=\"200\" height=\"200\">"
-        //html+="<img src="+quiz.questions[current].image+">"
-        //html+=makeImage(info.tag);
         getFlickr();
         html+=quiz.questions[current].image;
         html += "<br><br>";
@@ -261,9 +253,9 @@ function getFlickr() {
 function imageFunction(data) {
     var html;
     console.log("works");
-    html+= '<br><a href="' + "https://farm" + data.photos.photo[0].farm + ".staticflickr.com/" + data.photos.photo[0].server +
-        "/" + data.photos.photo[0].id + "_" + data.photos.photo[0].secret + ".jpg" + '" target="_blank">';
-    html += '<img title="' + data.photos.photo[0].title + '" src="' + "https://farm" + data.photos.photo[0].farm + ".staticflickr.com/" + data.photos.photo[0].server + "/" + data.photos.photo[0].id + "_" + data.photos.photo[0].secret + ".jpg";
+    html+= '<a href="' + "https://farm" + data.photos.photo[0].farm + ".staticflickr.com/" + data.photos.photo[0].server +
+        "/" + data.photos.photo[0].id+"_"+data.photos.photo[0].secret + ".jpg" + '" target="_blank">';
+    html += '<img title="' + data.photos.photo[0].title + '" src="' + "https://farm" + data.photos.photo[0].farm + ".staticflickr.com/" + data.photos.photo[0].server + "/" + data.photos.photo[0].id + "_" + data.photos.photo[0].secret+".jpg";
     html += '" alt="'+data.photos.photo[0].title + '" />'+'</a>';
     document.getElementById("entireQuiz").innerHTML+=html;
 }
