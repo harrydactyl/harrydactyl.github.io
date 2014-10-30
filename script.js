@@ -1,5 +1,3 @@
-//src = "jQuery.js";//import jQuery
-
 var quiz={
     "questions": [{
         "question": "What year was Trinity founded?",
@@ -9,14 +7,14 @@ var quiz={
             "4": "1950",
             "5": "1800",
             "correct": "1709",
-        "image": "\"http://bit.ly/1sNZSTt\""
+        "image": "\"long time ago\""
     }, {
         "question": "What is Trinity's student:teacher ratio?",
             "1": "6:1",
             "2": "5:1",
             "3": "10:1",
             "correct": "6:1",
-        "image": "\"http://bit.ly/1tyx6Zf\""
+        "image": "\"student with teacher\""
     }, {
         "question": "What are Trinity's school colors?",
             "1": "Blue and Gold",
@@ -24,14 +22,14 @@ var quiz={
             "3": "Green and Gold",
             "4": "Purple and White",
             "correct": "Blue and Gold",
-        "image": "\"http://bit.ly/1weGJvf\""
+        "image": "\"school colors\""
     }, {
         "question": "How big is the Trinity senate?",
             "1": "8 students",
             "2": "4 students",
             "3": "16 students",
             "correct": "16 students",
-        "image": "\"http://bit.ly/1sO0wjS\""
+        "image": "\"US senate\""
     }, {
         "question": "How many varsity teams does the upper school have in the winter season?",
             "1": "8 teams",
@@ -40,14 +38,14 @@ var quiz={
             "4": "5 teams",
             "5": "7 teams",
             "correct": "6 teams",
-        "image": "\"http://bit.ly/1vkcwe6\""
+        "image": "\"winter sports\""
     }, {
         "question": "On what street is Trinity located?",
             "1": "91st st",
             "2": "100th",
             "3": "84th",
             "correct": "91st",
-        "image": "\"http://bit.ly/ZwJZoC\""
+        "image": "\"street sign\""
     }, {
         "question": "On what floor is Trinity's math lab",
             "1": "The first floor",
@@ -55,7 +53,7 @@ var quiz={
             "3": "The second floor",
             "4": "The basement",
             "correct": "The second floor",
-        "image": "\"http://bit.ly/1F7lAHr\""
+        "image": "\"math lab\""
     }, {
         "question": "How many semester(s) of art does the Upper School require?",
             "1": "Three semesters",
@@ -63,21 +61,21 @@ var quiz={
             "3": "Two semesters",
             "4": "No semesters of art are required",
             "correct": "Three semesters",
-        "image": "\"http://bit.ly/1F7lT50\""
+        "image": "\"student painting\""
     }, {
         "question": "How many pool(s) does Trinity have?",
             "1": "One pool",
             "2": "Two pools",
             "3": "No pools",
             "correct": "Two pools",
-        "image": "\"http://bit.ly/ZGQDcv\""
+        "image": "\"swimmer\""
     }, {
         "question": "Which Canadian province is part of Trinity's global travel program?",
             "1": "British Columbia",
             "2": "Ontario",
             "3": "Quebec",
             "correct": "Quebec",
-        "image": "\"http://bit.ly/1sWk0TQ\""
+        "image": "\"canadians\""
     }]                                  
 
 }
@@ -151,7 +149,7 @@ function back() {
     }
     show();
 }
-    
+
 function show() {
     if(current<quiz.questions.length){
         var html = "";
@@ -172,7 +170,10 @@ function show() {
             html += "<br><br>";
         }
         //html+="<img src="+quiz.questions[current].image+" width=\"200\" height=\"200\">"
-        html+="<img src="+quiz.questions[current].image+">"
+        //html+="<img src="+quiz.questions[current].image+">"
+        //html+=makeImage(info.tag);
+        getFlickr();
+        html+=quiz.questions[current].image;
         html += "<br><br>";
         html += "<button type=\"button\" onclick=\"back()\">Back</button><button type=\"button\" onclick=\"next()\">Next</button><br><br>";
 
@@ -248,4 +249,21 @@ function logIn(){
     else{//don't let them take the quiz
         alert("creating a new account");
     }
+}
+
+function getFlickr() {
+    console.log("works");
+    var tag=quiz.questions[current].image;
+    $.getJSON("https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=44a4d773a71dfa0549f44f4ac10d4afe&text=" +
+            tag + "&format=json&nojsoncallback=1", imageFunction);
+}
+
+function imageFunction(data) {
+    var html;
+    console.log("works");
+    html+= '<br><a href="' + "https://farm" + data.photos.photo[0].farm + ".staticflickr.com/" + data.photos.photo[0].server +
+        "/" + data.photos.photo[0].id + "_" + data.photos.photo[0].secret + ".jpg" + '" target="_blank">';
+    html += '<img title="' + data.photos.photo[0].title + '" src="' + "https://farm" + data.photos.photo[0].farm + ".staticflickr.com/" + data.photos.photo[0].server + "/" + data.photos.photo[0].id + "_" + data.photos.photo[0].secret + ".jpg";
+    html += '" alt="'+data.photos.photo[0].title + '" />'+'</a>';
+    document.getElementById("entireQuiz").innerHTML+=html;
 }
