@@ -7,14 +7,14 @@ var quiz={
             "4": "1950",
             "5": "1800",
             "correct": "1709",
-        "image": "\"long time ago\""
+        "image": "\"old person\""
     }, {
         "question": "What is Trinity's student:teacher ratio?",
             "1": "6:1",
             "2": "5:1",
             "3": "10:1",
             "correct": "6:1",
-        "image": "\"student with teacher\""
+        "image": "\"student teacher\""
     }, {
         "question": "What are Trinity's school colors?",
             "1": "Blue and Gold",
@@ -22,7 +22,7 @@ var quiz={
             "3": "Green and Gold",
             "4": "Purple and White",
             "correct": "Blue and Gold",
-        "image": "\"school colors\""
+        "image": "\"blue and gold\""
     }, {
         "question": "How big is the Trinity senate?",
             "1": "8 students",
@@ -38,7 +38,7 @@ var quiz={
             "4": "5 teams",
             "5": "7 teams",
             "correct": "6 teams",
-        "image": "\"winter sports\""
+        "image": "\"wrestler\""
     }, {
         "question": "On what street is Trinity located?",
             "1": "91st st",
@@ -53,7 +53,7 @@ var quiz={
             "3": "The second floor",
             "4": "The basement",
             "correct": "The second floor",
-        "image": "\"math lab\""
+        "image": "\"calculus\""
     }, {
         "question": "How many semester(s) of art does the Upper School require?",
             "1": "Three semesters",
