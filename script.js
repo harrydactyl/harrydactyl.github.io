@@ -254,7 +254,7 @@ function logIn(){
 function getFlickr() {
     console.log("works");
     var tag=quiz.questions[current].image;
-    $.getJSON("https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=44a4d773a71dfa0549f44f4ac10d4afe&text=" +
+    $.getJSON("https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=d59d33d61747a729725116118d900e94&text=" +
             tag + "&format=json&nojsoncallback=1", imageFunction);
 }
 
