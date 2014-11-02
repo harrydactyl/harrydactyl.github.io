@@ -1,6 +1,4 @@
 var quiz;
-var score = [];
-var current = -1;
 
 /*jQuery(document).ready(function () {
     var quizholder=$.getJSON("questions.json", function( data ) {
@@ -14,11 +12,13 @@ $(document).ready(function(){
     $.ajaxSetup({
         async: false
     });
-    $.getJSON("questions.JSON", function(callback) {
-        quiz = callback 
+    $.getJSON("questions.JSON", function(data) {
+        quiz = data; 
     });
-    alert(quiz);
 });
+
+var score = [];
+var current = -1;
 
 function firstNext() {
      if(localStorage.getItem("accountExists")=="true"){
