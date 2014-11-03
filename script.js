@@ -84,7 +84,7 @@ function show(){
         console.log(quiz.questions[current].question);
         html += "<br> <b><u>" + quiz.questions[current].question + "</u></b><br><br>";
         var size=howLong();
-        for (i = 1; i <=size; i++) {
+        for (i = 1; i <=size-1; i++) {////here!
             var num = i.toString();
             console.log(num + ": " + quiz.questions[current][i]);
             html += "<input type=\"radio\" name=\"choice\">";
@@ -94,7 +94,6 @@ function show(){
         getFlickr();
         html += "<br>";
         html += "<button type=\"button\" onclick=\"back()\">Back</button><button type=\"button\" onclick=\"next()\">Next</button><br><br>";
-        //html+=quiz.questions[current].image;
         document.getElementById("entireQuiz").innerHTML = html;
         document.getElementById("greeting").innerHTML= "<br>"+"You're so smart! I know you'll get a perfect score, "+document.getElementById("username").value+"."+"<br><br>";
     }
