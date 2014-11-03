@@ -7,8 +7,7 @@
         quiz = data;
     });
 });*/
-var harryisstupid;
-
+var hold;
 var quiz={
     "questions": [{
         "question": "What year was Trinity founded?",
@@ -26,10 +25,10 @@ var current = -1;
 
 function firstNext() {
    // $.getJSON( "http://harrydactyl.github.io/questions.json", function( json ) {
-   harryisstupid=$.getJSON("questions.json", function(data) {
-        alert(2);
+   hold=$.getJSON("questions.json", function(data) {
+       alert(2);
        console.log(3);
-        harryisstupid=data;
+       quiz=data;
         //quiz=JSON.stringify(data);
     });
     /*$.getJSON("http://harrydactyl.github.io/questions.json", setData);*/
