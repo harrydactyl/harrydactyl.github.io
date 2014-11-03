@@ -1,53 +1,48 @@
-var quiz;
-
-/*jQuery(document).ready(function () {
-    var quizholder=$.getJSON("questions.json", function( data ) {
-        quiz = data;
-        score=new Array(quiz.questions.length);
-        alert(quiz);
-    });
-});*/
-
-$(document).ready(function(){
+/*$(document).ready(function(){
     $.ajaxSetup({
         async: false
     });
     $.getJSON("questions.JSON", function(data) {
-        quiz = data; 
+        alert(data);
+        quiz = data;
     });
-});
+});*/
 
+var quiz={
+    "questions": [{
+        "question": "What year was Trinity founded?",
+        "1": "1910",
+        "2": "1709",
+        "3": "1802",
+        "4": "1950",
+        "5": "1800",
+        "correct": "1709",
+        "image": "\"old person\""
+    }]
+}
 var score = [];
 var current = -1;
 
 function firstNext() {
-     if(localStorage.getItem("accountExists")=="true"){
+    $.getJSON( "http://harrydactyl.github.io/questions.json", function( json ) {
+        alert(JSON.stringify(json));
+        quiz=JSON.stringify(json);
+    });
+    /*$.getJSON("http://harrydactyl.github.io/questions.json", setData);*/
+    if(localStorage.getItem("accountExists")=="true"){
         logIn();
     }
     else{
         signUp();
     }
-    var choice;
-    var didTheUserCheckSomething=false;
-    var radios = document.getElementsByName("choice");
-    for (i = 0; i<radios.length; i++) {
-        if (radios[i].checked) {
-            didTheUserCheckSomething=true;
-            choice=quiz.questions[current][i+1];
-            correct=quiz.questions[current].correct;
-            if(choice==correct){
-                score[current]=1;//using an array helps with the back button
-            }
-            //alert("You chose "+quiz.questions[current][i+1]+"! Nice choice!");
-        }
-    }
-    if(didTheUserCheckSomething==true || current==-1){
-        //$.("entireQuiz").fadeOut("fast");//not working properly+can't fix
-        current += 1;
-        show();
-    }
+    next();
 }
 
+/*function setData(data){
+    alert(data);
+    quiz=data;
+    score=new Array(quiz.questions.length);
+}*/
 /*function doNext(){
     $("#entireQuiz").fadeOut("slow", next() {
     // Animation complete.
@@ -177,13 +172,12 @@ function logIn(){
 }
 
 function getFlickr() {
-    alert("works");
     var tag=quiz.questions[current].image;
     $.getJSON("https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=d59d33d61747a729725116118d900e94&text=" +
-            tag + "&format=json&nojsoncallback=1", imageFunction);
+            tag + "&format=json&nojsoncallback=1", showPicture);
 }
 
-function imageFunction(data) {
+function showPicture(data) {
     var html;
     console.log("works");
     html+= '<a href="';
