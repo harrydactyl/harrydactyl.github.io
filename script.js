@@ -29,7 +29,9 @@ function firstNext() {
        alert(JSON.stringify(data)+"1");
        console.log(3);
        quiz=data;
+       score=new Array(quiz.questions.length);
         //quiz=JSON.stringify(data);
+       next();
     });
     /*$.getJSON("http://harrydactyl.github.io/questions.json", setData);*/
     if(localStorage.getItem("accountExists")=="true"){
@@ -38,7 +40,7 @@ function firstNext() {
     else{
         signUp();
     }
-    next();
+    
 }
 
 /*function setData(data){
