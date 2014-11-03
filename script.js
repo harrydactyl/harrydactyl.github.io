@@ -7,6 +7,7 @@
         quiz = data;
     });
 });*/
+var harryisstupid;
 
 var quiz={
     "questions": [{
@@ -24,9 +25,12 @@ var score = [];
 var current = -1;
 
 function firstNext() {
-    $.getJSON( "http://harrydactyl.github.io/questions.json", function( json ) {
-        alert(JSON.stringify(json));
-        quiz=JSON.stringify(json);
+   // $.getJSON( "http://harrydactyl.github.io/questions.json", function( json ) {
+   harryisstupid=$.getJSON("questions.JSON", function(data) {
+        alert(2);
+       console.log(3);
+        harryisstupid=data;
+        //quiz=JSON.stringify(data);
     });
     /*$.getJSON("http://harrydactyl.github.io/questions.json", setData);*/
     if(localStorage.getItem("accountExists")=="true"){
@@ -162,12 +166,12 @@ function signUp(){
 }
 
 function logIn(){ 
-    alert("logging in");
+    //alert("logging in");
     if(document.getElementById("username").value==localStorage.getItem("usernamee")&&  document.getElementById("password").value==localStorage.getItem("pass")){
-        alert("logged in");
+        //alert("logged in");
     }
     else{//don't let them take the quiz
-        alert("creating a new account");
+        //alert("creating a new account");
     }
 }
 
