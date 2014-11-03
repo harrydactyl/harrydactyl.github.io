@@ -11,18 +11,17 @@ function firstNext() {
        //alert(JSON.stringify(data)+"1");
        quiz=data;
        score=new Array(quiz.questions.length);
-       next();
     });
     if(localStorage.getItem("accountExists")=="true"){
         logIn();
     }
     else{
         signUp();
-    }    
+    }
+    next();
 }
 
 function next() {
-    alert(1);
     var choice;
     var didTheUserCheckSomething=false;
     var radios = document.getElementsByName("choice");
@@ -36,12 +35,10 @@ function next() {
             }
         }
     }
-    alert(2);
     if(didTheUserCheckSomething==true || current==-1){
         //$.("entireQuiz").fadeOut("fast");
         current += 1;
         show();
-        alert(3);
     }
 }
 
