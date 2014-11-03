@@ -26,7 +26,7 @@ var current = -1;
 
 function firstNext() {
    // $.getJSON( "http://harrydactyl.github.io/questions.json", function( json ) {
-   harryisstupid=$.getJSON("questions.JSON", function(data) {
+   harryisstupid=$.getJSON("questions.json", function(data) {
         alert(2);
        console.log(3);
         harryisstupid=data;
