@@ -3,26 +3,16 @@ var quiz;
 var score;
 var current = -1;
 
-$(document).ready(function(){
-$.ajaxSetup({
-        async: false
-    });
-    quiz=$.getJSON("questions.json", function(data) {
-       //alert(JSON.stringify(data)+"1");
-       quiz=data;
-       score=new Array(quiz.questions.length);
-    });
-});
-
 function firstNext() {
    /*$.ajaxSetup({
         async: false
-    });
-    quiz=$.getJSON("questions.json", function(data) {
+    });*/
+    hold=$.getJSON("questions.json", function(data) {
        //alert(JSON.stringify(data)+"1");
        quiz=data;
        score=new Array(quiz.questions.length);
-    });*/
+    });
+    
     if(localStorage.getItem("accountExists")=="true"){
         logIn();
     }
