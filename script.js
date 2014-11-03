@@ -84,7 +84,7 @@ function show(){
         console.log(quiz.questions[current].question);
         html += "<br> <b><u>" + quiz.questions[current].question + "</u></b><br><br>";
         var size=howLong();
-        for (i = 1; i <=size-1; i++) {////here!
+        for (i = 1; i <=size; i++) {////here!
             var num = i.toString();
             console.log(num + ": " + quiz.questions[current][i]);
             html += "<input type=\"radio\" name=\"choice\">";
