@@ -1,12 +1,3 @@
-/*$(document).ready(function(){
-    $.ajaxSetup({
-        async: false
-    });
-    $.getJSON("questions.JSON", function(data) {
-        alert(data);
-        quiz = data;
-    });
-});*/
 var hold;
 var quiz={
     "questions": [{
@@ -24,8 +15,10 @@ var score = [];
 var current = -1;
 
 function firstNext() {
-   // $.getJSON( "http://harrydactyl.github.io/questions.json", function( json ) {
-   quiz=$.getJSON("questions.json", function(data) {
+   $.ajaxSetup({
+        async: false
+    });
+    quiz=$.getJSON("questions.json", function(data) {
        alert(JSON.stringify(data)+"1");
        console.log(3);
        quiz=data;
@@ -101,7 +94,7 @@ function show(){
         getFlickr();
         html += "<br>";
         html += "<button type=\"button\" onclick=\"back()\">Back</button><button type=\"button\" onclick=\"next()\">Next</button><br><br>";
-        html+=quiz.questions[current].image;
+        //html+=quiz.questions[current].image;
         document.getElementById("entireQuiz").innerHTML = html;
         document.getElementById("greeting").innerHTML= "<br>"+"You're so smart! I know you'll get a perfect score, "+document.getElementById("username").value+"."+"<br><br>";
     }
