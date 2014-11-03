@@ -1,16 +1,5 @@
 var hold;
-var quiz={
-    "questions": [{
-        "question": "What year was Trinity founded?",
-        "1": "1910",
-        "2": "1709",
-        "3": "1802",
-        "4": "1950",
-        "5": "1800",
-        "correct": "1709",
-        "image": "\"old person\""
-    }]
-}
+var quiz;
 var score = [];
 var current = -1;
 
@@ -22,32 +11,18 @@ function firstNext() {
        //alert(JSON.stringify(data)+"1");
        quiz=data;
        score=new Array(quiz.questions.length);
-        //quiz=JSON.stringify(data);
        next();
     });
-    /*$.getJSON("http://harrydactyl.github.io/questions.json", setData);*/
     if(localStorage.getItem("accountExists")=="true"){
         logIn();
     }
     else{
         signUp();
-    }
-    
+    }    
 }
 
-/*function setData(data){
-    alert(data);
-    quiz=data;
-    score=new Array(quiz.questions.length);
-}*/
-/*function doNext(){
-    $("#entireQuiz").fadeOut("slow", next() {
-    // Animation complete.
-  });
-}*/
-
 function next() {
-    //localStorage();
+    alert(1);
     var choice;
     var didTheUserCheckSomething=false;
     var radios = document.getElementsByName("choice");
@@ -57,15 +32,16 @@ function next() {
             choice=quiz.questions[current][i+1];
             correct=quiz.questions[current].correct;
             if(choice==correct){
-                score[current]=1;//using an array helps with the back button
+                score[current]=1;
             }
-            //alert("You chose "+quiz.questions[current][i+1]+"! Nice choice!");
         }
     }
+    alert(2);
     if(didTheUserCheckSomething==true || current==-1){
-        //$.("entireQuiz").fadeOut("fast");//not working properly+can't fix
+        //$.("entireQuiz").fadeOut("fast");
         current += 1;
         show();
+        alert(3);
     }
 }
 
