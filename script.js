@@ -1,17 +1,28 @@
 var hold;
 var quiz;
-var score = [];
+var score;
 var current = -1;
 
-function firstNext() {
-   /*$.ajaxSetup({
+$(document).ready(function(){
+$.ajaxSetup({
         async: false
-    });*/
+    });
     quiz=$.getJSON("questions.json", function(data) {
        //alert(JSON.stringify(data)+"1");
        quiz=data;
        score=new Array(quiz.questions.length);
     });
+});
+
+function firstNext() {
+   /*$.ajaxSetup({
+        async: false
+    });
+    quiz=$.getJSON("questions.json", function(data) {
+       //alert(JSON.stringify(data)+"1");
+       quiz=data;
+       score=new Array(quiz.questions.length);
+    });*/
     if(localStorage.getItem("accountExists")=="true"){
         logIn();
     }
