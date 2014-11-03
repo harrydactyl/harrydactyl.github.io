@@ -25,8 +25,8 @@ var current = -1;
 
 function firstNext() {
    // $.getJSON( "http://harrydactyl.github.io/questions.json", function( json ) {
-   hold=$.getJSON("questions.json", function(data) {
-       alert(2);
+   quiz=$.getJSON("questions.json", function(data) {
+       alert(JSON.stringify(data)+"1");
        console.log(3);
        quiz=data;
         //quiz=JSON.stringify(data);
