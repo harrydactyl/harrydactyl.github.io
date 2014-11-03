@@ -19,8 +19,7 @@ function firstNext() {
         async: false
     });
     quiz=$.getJSON("questions.json", function(data) {
-       alert(JSON.stringify(data)+"1");
-       console.log(3);
+       //alert(JSON.stringify(data)+"1");
        quiz=data;
        score=new Array(quiz.questions.length);
         //quiz=JSON.stringify(data);
@@ -86,7 +85,6 @@ function show(){
         var size=howLong();
         for (i = 1; i <=size; i++) {////here!
             var num = i.toString();
-            console.log(num + ": " + quiz.questions[current][i]);
             html += "<input type=\"radio\" name=\"choice\">";
             html+=quiz.questions[current][i];
             html += "<br><br>";
@@ -159,12 +157,12 @@ function signUp(){
 }
 
 function logIn(){ 
-    //alert("logging in");
+    alert("logging in");
     if(document.getElementById("username").value==localStorage.getItem("usernamee")&&  document.getElementById("password").value==localStorage.getItem("pass")){
-        //alert("logged in");
+        alert("logged in");
     }
     else{//don't let them take the quiz
-        //alert("creating a new account");
+        alert("creating a new account");
     }
 }
 
@@ -180,7 +178,6 @@ function showPicture(data) {
     html+= '<a href="';
     html+="https://farm" + data.photos.photo[0].farm+".staticflickr.com/" + data.photos.photo[0].server+"/" + data.photos.photo[0].id+"_"+data.photos.photo[0].secret + ".jpg"
     html+='" target="_blank">';
-    
     html += '<img title="' + data.photos.photo[0].title
     html+='" src="' + "https://farm" + data.photos.photo[0].farm + ".staticflickr.com/"
     html+=data.photos.photo[0].server + "/" + data.photos.photo[0].id
