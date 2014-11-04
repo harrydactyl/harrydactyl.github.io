@@ -3,6 +3,18 @@ var quiz;
 var score;
 var current = -1;
 
+$(document).ready(function(){
+    $.ajaxSetup({
+        async: false
+    });
+    quiz=$.getJSON("questions.json", function(data) {
+       //alert(JSON.stringify(data)+"1");
+        quiz=data;
+        score=new Array(quiz.questions.length);
+        alert(score);
+    });
+});
+
 function firstNext() {
    /*$.ajaxSetup({
         async: false
@@ -13,20 +25,6 @@ function firstNext() {
         score=new Array(quiz.questions.length);
         alert(score);
     });*/
-    alert(1);
-    $.ajaxSetup({
-        alert(2);
-        async: false
-        alert(3);
-        quiz=$.getJSON("questions.json", function(data) {
-            alert(4);
-            quiz=data;
-            alert(5);
-            score=new Array(quiz.questions.length);
-            alert(6);
-        });
-        alert(7);
-    });
     
     if(localStorage.getItem("accountExists")=="true"){
         logIn();
