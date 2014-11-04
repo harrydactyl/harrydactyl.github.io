@@ -53,7 +53,6 @@ function back() {
 
 function show(){
     $("#entireQuiz").fadeOut();
-    alert(2);
     if(current<quiz.questions.length){
         var html = "";
         console.log(quiz.questions[current].question);
