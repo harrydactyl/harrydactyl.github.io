@@ -37,6 +37,7 @@ function next() {
     if(didTheUserCheckSomething==true || current==-1){
         //$.("entireQuiz").fadeOut("fast");
         current += 1;
+        $("#entireQuiz").fadeOut();
         show();
     }
 }
@@ -50,7 +51,6 @@ function back() {
 }
 
 function show(){
-    $("#entireQuiz").fadeOut();//fade out old question
     if(current<quiz.questions.length){
         var html = "";
         console.log(quiz.questions[current].question);
