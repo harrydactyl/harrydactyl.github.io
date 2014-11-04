@@ -64,8 +64,8 @@ function show(){
         getFlickr();
         html += "<br>";
         html += "<button type=\"button\" onclick=\"back()\">Back</button><button type=\"button\" onclick=\"next()\">Next</button><br><br>";
+        $(".entireQuiz").fadeOut();//fade old question
         document.getElementById("entireQuiz").innerHTML = html;
-        $(".entireQuiz").fadeIn();//fade in question
         document.getElementById("greeting").innerHTML= "<br>"+"You're so smart! I know you'll get a perfect score, "+document.getElementById("username").value+"."+"<br><br>";
     }
     
