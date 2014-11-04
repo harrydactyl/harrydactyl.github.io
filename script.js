@@ -4,7 +4,7 @@ var score;
 var current = -1;
 
 function firstNext() {
-   $.ajaxSetup({
+   /*$.ajaxSetup({
         async: false
     });
     quiz=$.getJSON("questions.json", function(data) {
@@ -12,7 +12,16 @@ function firstNext() {
         quiz=data;
         score=new Array(quiz.questions.length);
         alert(score);
+    });*/
+    $.ajaxSetup({
+        async: false
+        quiz=$.getJSON("questions.json", function(data) {
+            quiz=data;
+            score=new Array(quiz.questions.length);
+            alert(score);
+        });
     });
+    
     if(localStorage.getItem("accountExists")=="true"){
         logIn();
     }
