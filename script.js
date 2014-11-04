@@ -3,32 +3,15 @@ var quiz;
 var score;
 var current = -1;
 
-$(document).ready(function(){
-    alert(1);
+function firstNext() {
     $.ajaxSetup({
         async: false;
     });
-    alert(2);
-    quiz=$.getJSON("questions.json", function(data) {
-       //alert(JSON.stringify(data)+"1");
-        alert(3);
-        quiz=data;
-        score=new Array(quiz.questions.length);
-        alert(4);
-    });
-    alert(5);
-});
-
-function firstNext() {
-   /*$.ajaxSetup({
-        async: false
-    });
-    quiz=$.getJSON("questions.json", function(data) {
+    hold=$.getJSON("questions.json", function(data) {
        //alert(JSON.stringify(data)+"1");
         quiz=data;
         score=new Array(quiz.questions.length);
-        alert(score);
-    });*/
+    });
     
     if(localStorage.getItem("accountExists")=="true"){
         logIn();
