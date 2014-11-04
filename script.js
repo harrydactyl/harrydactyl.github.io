@@ -8,21 +8,26 @@ function firstNext() {
         async: false
     });*/
     quiz=$.getJSON("questions.json", function(data) {
-       alert(JSON.stringify(data)+"1");
-       quiz=data;
-       score=new Array(quiz.questions.length);
+       //alert(JSON.stringify(data)+"1");
+        alert(1);
+        quiz=data;
+        alert(2);
+        score=new Array(quiz.questions.length);
+        alert(3);
     });
-    
+    alert(4);
     if(localStorage.getItem("accountExists")=="true"){
         logIn();
     }
     else{
         signUp();
     }
+    alert(5);
     next();
 }
 
 function next() {
+    alert(6);
     var choice;
     var didTheUserCheckSomething=false;
     var radios = document.getElementsByName("choice");
@@ -131,12 +136,12 @@ function signUp(){
 }
 
 function logIn(){ 
-    alert("logging in");
+    //alert("logging in");
     if(document.getElementById("username").value==localStorage.getItem("usernamee")&&  document.getElementById("password").value==localStorage.getItem("pass")){
-        alert("logged in");
+        //alert("logged in");
     }
     else{//don't let them take the quiz
-        alert("creating a new account");
+        //alert("creating a new account");
     }
 }
 
