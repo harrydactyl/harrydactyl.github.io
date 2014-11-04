@@ -19,6 +19,7 @@ function firstNext() {
     else{
         signUp();
     }
+    alert(quiz.questions[current+3]);
     next();
 }
 
@@ -39,7 +40,6 @@ function next() {
     if(didTheUserCheckSomething==true || current==-1){
         //$.("entireQuiz").fadeOut("fast");
         current += 1;
-        alert(quiz);
         show();
     }
 }
