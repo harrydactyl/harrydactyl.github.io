@@ -37,8 +37,9 @@ function next() {
     if(didTheUserCheckSomething==true || current==-1){
         //$.("entireQuiz").fadeOut("fast");
         current += 1;
-        $("#entireQuiz").fadeOut(fast,show());//show()
-        //show();
+        $("#entireQuiz").fadeOut("fast",function() {
+            show();
+        });
     }
 }
 
