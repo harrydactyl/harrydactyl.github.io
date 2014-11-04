@@ -20,7 +20,7 @@ function firstNext() {
     else{
         signUp();
     }
-    document.getElementById("test").innerHTML = quiz.questions.length;
+    document.getElementById("test").innerHTML = quiz.questions[current];//make sure this happens before we create the questions
     next();
 }
 
