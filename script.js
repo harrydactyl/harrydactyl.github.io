@@ -7,7 +7,7 @@ function firstNext() {
    /*$.ajaxSetup({
         async: false
     });*/
-    hold=$.getJSON("questions.json", function(data) {
+    quiz=$.getJSON("questions.json", function(data) {
        //alert(JSON.stringify(data)+"1");
        quiz=data;
        score=new Array(quiz.questions.length);
