@@ -9,28 +9,25 @@ function firstNext() {
     });*/
     quiz=$.getJSON("questions.json", function(data) {
        //alert(JSON.stringify(data)+"1");
-        alert(1);
         quiz=data;
-        alert(2);
         score=new Array(quiz.questions.length);
-        alert(3);
+        alert(score);
     });
-    alert(4);
     if(localStorage.getItem("accountExists")=="true"){
         logIn();
     }
     else{
         signUp();
     }
-    alert(5);
     next();
 }
 
 function next() {
-    alert(6);
+    alert(1);
     var choice;
     var didTheUserCheckSomething=false;
     var radios = document.getElementsByName("choice");
+    alert(2);
     for (i = 0; i<radios.length; i++) {
         if (radios[i].checked) {
             didTheUserCheckSomething=true;
@@ -41,9 +38,11 @@ function next() {
             }
         }
     }
+    alert(3);
     if(didTheUserCheckSomething==true || current==-1){
         //$.("entireQuiz").fadeOut("fast");
         current += 1;
+        alert(4);
         show();
     }
 }
