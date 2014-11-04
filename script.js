@@ -38,6 +38,7 @@ function next() {
         //$.("entireQuiz").fadeOut("fast");
         current += 1;
         $("#entireQuiz").fadeOut("fast",function() {
+            alert(1);
             show();
         });
     }
@@ -52,6 +53,7 @@ function back() {
 }
 
 function show(){
+    alert(2);
     if(current<quiz.questions.length){
         var html = "";
         console.log(quiz.questions[current].question);
