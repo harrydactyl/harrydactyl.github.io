@@ -73,6 +73,7 @@ function show(){
     }
     
     else{
+        $("#entireQuiz").fadeIn();
         var totalScore=0;
         for(i=0; i<score.length; i++){
             if(score[i]==1){
