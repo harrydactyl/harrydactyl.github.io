@@ -4,12 +4,13 @@ var score;
 var current = -1;
 
 function firstNext() {
-    $.ajaxSetup({
+    /*$.ajaxSetup({
         async: false;
-    });
+    });*/
     hold=$.getJSON("questions.json", function(data) {
        //alert(JSON.stringify(data)+"1");
         quiz=data;
+        alert(quiz);
         score=new Array(quiz.questions.length);
     });
     
@@ -19,7 +20,7 @@ function firstNext() {
     else{
         signUp();
     }
-    alert(quiz.questions[current+3]);
+    document.getElementById("test").innerHTML = quiz.questions.length;
     next();
 }
 
