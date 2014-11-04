@@ -50,6 +50,7 @@ function back() {
 }
 
 function show(){
+    $("#entireQuiz").fadeOut();//fade out old question
     if(current<quiz.questions.length){
         var html = "";
         console.log(quiz.questions[current].question);
@@ -64,7 +65,7 @@ function show(){
         getFlickr();
         html += "<br>";
         html += "<button type=\"button\" onclick=\"back()\">Back</button><button type=\"button\" onclick=\"next()\">Next</button><br><br>";
-        $("#entireQuiz").fadeOut();//fade out old question
+        //$("#entireQuiz").fadeOut();//fade out old question
         document.getElementById("entireQuiz").innerHTML = html;
         $("#entireQuiz").fadeIn();//fade in new question
         document.getElementById("greeting").innerHTML= "<br>"+"You're so smart! I know you'll get a perfect score, "+document.getElementById("username").value+"."+"<br><br>";
