@@ -23,11 +23,9 @@ function firstNext() {
 }
 
 function next() {
-    alert(1);
     var choice;
     var didTheUserCheckSomething=false;
     var radios = document.getElementsByName("choice");
-    alert(2);
     for (i = 0; i<radios.length; i++) {
         if (radios[i].checked) {
             didTheUserCheckSomething=true;
@@ -38,11 +36,10 @@ function next() {
             }
         }
     }
-    alert(3);
     if(didTheUserCheckSomething==true || current==-1){
         //$.("entireQuiz").fadeOut("fast");
         current += 1;
-        alert(4);
+        alert(quiz);
         show();
     }
 }
