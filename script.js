@@ -4,13 +4,8 @@ var score;
 var current = -1;
 
 function firstNext() {
-    /*$.ajaxSetup({
-        async: false;
-    });*/
     hold=$.getJSON("questions.json", function(data) {
-       //alert(JSON.stringify(data)+"1");
         quiz=data;
-        alert(quiz);
         score=new Array(quiz.questions.length);
     });
     
@@ -20,8 +15,7 @@ function firstNext() {
     else{
         signUp();
     }
-    //document.getElementById("test").innerHTML = quiz.questions[current];//make sure this happens before we create the questions
-    if(quiz!=5){
+    if(quiz!=5){//doesn't let the program continue until quiz is the json file!! :)
         next();
     }
 }
@@ -71,6 +65,7 @@ function show(){
         html += "<br>";
         html += "<button type=\"button\" onclick=\"back()\">Back</button><button type=\"button\" onclick=\"next()\">Next</button><br><br>";
         document.getElementById("entireQuiz").innerHTML = html;
+        $("entireQuiz").fadeIn();//fade in question
         document.getElementById("greeting").innerHTML= "<br>"+"You're so smart! I know you'll get a perfect score, "+document.getElementById("username").value+"."+"<br><br>";
     }
     
