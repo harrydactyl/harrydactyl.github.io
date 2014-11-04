@@ -65,7 +65,7 @@ function show(){
         html += "<br>";
         html += "<button type=\"button\" onclick=\"back()\">Back</button><button type=\"button\" onclick=\"next()\">Next</button><br><br>";
         document.getElementById("entireQuiz").innerHTML = html;
-        $("entireQuiz").fadeIn();//fade in question
+        $(".entireQuiz").fadeIn();//fade in question
         document.getElementById("greeting").innerHTML= "<br>"+"You're so smart! I know you'll get a perfect score, "+document.getElementById("username").value+"."+"<br><br>";
     }
     
