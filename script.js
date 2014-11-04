@@ -4,15 +4,19 @@ var score;
 var current = -1;
 
 $(document).ready(function(){
+    alert(1);
     $.ajaxSetup({
-        async: false
+        async: false;
     });
+    alert(2);
     quiz=$.getJSON("questions.json", function(data) {
        //alert(JSON.stringify(data)+"1");
+        alert(3);
         quiz=data;
         score=new Array(quiz.questions.length);
-        alert(score);
+        alert(4);
     });
+    alert(5);
 });
 
 function firstNext() {
