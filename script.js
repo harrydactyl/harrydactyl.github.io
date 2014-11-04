@@ -1,5 +1,5 @@
 var hold;
-var quiz;
+var quiz=5;
 var score;
 var current = -1;
 
@@ -20,8 +20,10 @@ function firstNext() {
     else{
         signUp();
     }
-    document.getElementById("test").innerHTML = quiz.questions[current];//make sure this happens before we create the questions
-    next();
+    //document.getElementById("test").innerHTML = quiz.questions[current];//make sure this happens before we create the questions
+    if(quiz!=5){
+        next();
+    }
 }
 
 function next() {
