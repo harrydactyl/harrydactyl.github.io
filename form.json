@@ -1,0 +1,24 @@
+
+{
+    "questions": [{
+        "question": "How does your head feel",
+        "type": "radio",
+        "1": "Completely normal",
+        "2": "Almost normal",
+        "3": "Not great",
+        "4": "Bad",
+        "5": "Super bad"
+    }, {
+        "question": "Do you have any of these symptoms?",
+        "type": "checkbox",
+        "1": "Blurred vision",
+        "2": "Tired",
+        "3": "Cannot move"
+    }, {
+        "question": "Are you able to read anything?",
+        "type": "radio",
+        "1": "Nope",
+        "2": "Yeah",
+        "3": "Kind of",
+    }]
+}
