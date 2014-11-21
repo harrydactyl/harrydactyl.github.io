@@ -18,7 +18,7 @@ function loadJSON() {
 }
 /*
 function generateForm() {
-    for (i = 1; i <=3; i++) {////change 3 to a size function next draft
+    for (i = 1; i <=3; i++) {////change 3 to a size function
         for (j = 1; j <=3; j++) {//form.questions[i].size
         html += "<input type="+form.questions[i].type+" name=\"choice\">";
         html+=form.questions[i][i];
