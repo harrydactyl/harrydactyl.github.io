@@ -1,7 +1,6 @@
-
 {
     "questions": [{
-        "question": "How does your head feel",
+        "question": "How does your head feel?",
         "type": "radio",
         "1": "Completely normal",
         "2": "Almost normal",
@@ -19,6 +18,6 @@
         "type": "radio",
         "1": "Nope",
         "2": "Yeah",
-        "3": "Kind of",
+        "3": "Kind of"
     }]
 }

@@ -1,98 +1,83 @@
-var hold;
-var form = 1;
-var current;
+/*var hold;
+var form = 4;
+//var current;
+*/
+var form={
+    "questions": [{
+        "question": "How does your head feel?",
+        "type": "radio",
+        "1": "Completely normal",
+        "2": "Almost normal",
+        "3": "Not great",
+        "4": "Bad",
+        "5": "Super bad"
+    }, {
+        "question": "Do you have any of these symptoms?",
+        "type": "checkbox",
+        "1": "Blurred vision",
+        "2": "Tired",
+        "3": "Cannot move"
+    }, {
+        "question": "Are you able to read anything?",
+        "type": "radio",
+        "1": "Nope",
+        "2": "Yeah",
+        "3": "Kind of"
+    }]
+}
 
-function loadJSON() {
+function loadJSON() {/*
     alert(1);
-    hold = $.getJSON("form.json", function(data) {
+    hold=$.getJSON("form.json", function(data) {
         alert(2);
         form=data;
         alert(3);
     });
-    alert(4);
-    if(form!=1) {
-        alert(5);
-        generateForm();
+    if(form!=4) {
+        alert(5);*/
+        generateForm();/*
     }
-    alert(6);
+    alert(6);*/
 }
 
 function generateForm() {
-    alert(1);
-    for (i = 1; i <=3; i++) { ////change 3 to a size function
-        var html;
+    var html="";
+    for (i = 0; i <=2; i++) { ////change 3 to a size function
+        html+="<br><br>"
+        html+="<font color=\"black\">"+form.questions[i].question+"</font><br>";
         for (j = 1; j <=3; j++) {//form.questions[i].size
-        html += "<input type="+form.questions[i].type+" name=\"choice\">";
-        html+=form.questions[i][i];
-        html += "<br><br>";
+            html += "<input type="+form.questions[i].type+" name=\"choice\">";
+            //alert(form.questions[i][i]);
+            html+=form.questions[i][j];
+            html += "<br>";
         }
+        html+="<br>"
     }
-    alert("good");
+    html+="<br><input type=\"submit\" value=\"Submit\">";
+    //html+=<button type="button" onclick="loadJSON()">BEGIN</button>
+    html+="<br><br><br>";
+    document.getElementById("format").innerHTML = html;
 }
 
-/*
-var hold;
-var quiz=5;
-var score;
-var current = -1;
-
-function loadJSON() {
-    alert(1);
-    hold=$.getJSON("questions.json", function(data) {
-        alert(2);
-        quiz=data;
-        alert(3);
-    });
-    alert(4);
-    if(quiz!=5){
-        alert(5);
-        generateForm();
-    }
-    alert(6);
-}
-
-function generateForm() {
-    var choice;
-    var didTheUserCheckSomething=false;
-    var radios = document.getElementsByName("choice");
-    for (i = 0; i<radios.length; i++) {
-        if (radios[i].checked) {
-            didTheUserCheckSomething=true;
-            choice=quiz.questions[current][i+1];
-            correct=quiz.questions[current].correct;
-            if(choice==correct){
-                score[current]=1;
-            }
+/*function outputData(){
+    var d=new date;
+    var dd=d.getDate();
+    var password="password";
+    var out;
+    var pain=5;
+    var happiness=3;
+    var other="My life sucks";
+    out={
+        studentUser1{
+			passwordHash: password,
+            dates:[
+                dd{
+				pain: pain,
+				happiness: happiness,
+				other: other
+                }
+            ],
         }
     }
-    if(didTheUserCheckSomething==true || current==-1){
-        //$.("entireQuiz").fadeOut("fast");
-        current += 1;
-            show();
-    }
-}
-
-function show(){
-        var html = "";
-        var size=howLong();
-        for (i = 1; i <=size; i++) {////here!
-            html += "<br> <b><u>" + quiz.questions[i].question + "</u></b><br><br>";
-            html += "<input type="+quiz.questions[i].type+" name=\"choice\">";
-            html+=quiz.questions[i][j];
-            html += "<br><br>";
-        }
-        html += "<br>";
-        document.getElementById("entireQuiz").innerHTML = html;
-}//end show()
-
-function howLong(){
-    var size=0;
-    for (i = 0; i < 1000; i++) {//DYNAMIC!!
-        if(quiz.questions[current][i+1]==undefined){
-            return size;
-        }
-        else{
-            size=size+1;
-        }
-    }
+    alert(out);
 }*/
