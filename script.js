@@ -123,12 +123,13 @@ function register(){
     document.getElementById("format").innerHTML += url;
 }
 
-function hash(){//modified from http://werxltd.com/wp/2010/05/13/javascript-implementation-of-javas-string-hashcode-method/
-    var hash = 0;
+function hash(){
+    //modified from http://werxltd.com/wp/2010/05/13/javascript-implementation-of-javas-string-hashcode-method/
+    var hashh = 0;
     for (i = 0; i < this.length; i++) {
         char = this.charCodeAt(i);
-        hash = ((hash<<5)-hash)+char;
-        hash = hash & hash; // Convert to 32bit integer
+        hashh = ((hashh<<5)-hashh)+char;
+        hashh = hashh & hashh; // Convert to 32bit integer
     }
-    return hash;
+    return hashh;
 }
