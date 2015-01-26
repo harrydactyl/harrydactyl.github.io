@@ -1,5 +1,3 @@
-src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/md5.js"
-
 var nameHolder;
 var passHolder;
 var first=true;
