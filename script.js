@@ -29,6 +29,11 @@ var form={
     }]
 }
 
+function begin(){
+    var html= "<input type=\"text\" name=\"name\" id=\"name\" placeholder=\"NAME\"><br><input type=\"text\" name=\"password\" id=\"password\" placeholder=\"PASSWORD\"><br><input type=\"text\" name=\"trainer\" id=\"trainer\" placeholder=\"TRAINER NAME\"><br><br><button type=\"button\" onclick=\"logIn()\">Log in</button><button type=\"button\" onclick=\"register()\">Register</button><br><br>"
+    document.getElementById("format").innerHTML = html;
+}
+
 function generateForm() {
     var html="";
     html+="<br>";
@@ -113,6 +118,8 @@ function func(data){
 function register(){
     nameHolder=document.getElementById("name").value;
     passHolder=document.getElementById("password").value;
+    localStorage.setItem("username", nameHolder);
+    localStorage.setItem("userpassword", passHolder);
     var trainerHolder=document.getElementById("trainer").value;;
     var html;
     html = "https://script.google.com/macros/s/AKfycbyslCQDjkX_YM55QGK8BAckA9MehGVPNcnlJQGtmtn-SsIBXVo/exec?createStudent&prefix=func";
