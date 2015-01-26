@@ -30,8 +30,6 @@ var form={
 }
 
 function generateForm() {
-    var stri="my name is harry";
-    alert(stri.hash());
     var html="";
     html+="<br>";
     for (i = 0; i <=3; i++) { ////change 3 to a size function
@@ -121,15 +119,4 @@ function register(){
     html+="&name="+encodeURI(nameHolder)+"&pass="+passHolder+"&trainerName="+trainerHolder;
     var url="<a href="+html+">create account</a>";
     document.getElementById("format").innerHTML += url;
-}
-
-function hash(){
-    //modified from http://werxltd.com/wp/2010/05/13/javascript-implementation-of-javas-string-hashcode-method/
-    var hashh = 0;
-    for (i = 0; i < this.length; i++) {
-        char = this.charCodeAt(i);
-        hashh = ((hashh<<5)-hashh)+char;
-        hashh = hashh & hashh; // Convert to 32bit integer
-    }
-    return hashh;
 }
