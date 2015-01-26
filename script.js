@@ -109,7 +109,7 @@ function logIn(){
     localStorage.setItem("username", nameHolder);
     //localStorage.setItem("userpassword", passHolder);
     var script = document.createElement("script");
-        script.src = "https://script.google.com/macros/s/AKfycbyslCQDjkX_YM55QGK8BAckA9MehGVPNcnlJQGtmtn-SsIBXVo/exec?studentLogin&prefix=func&name="+nameHolder+"&pass="+CryptoJS.MD5(passHolder);
+        script.src = "https://script.google.com/macros/s/AKfycbyslCQDjkX_YM55QGK8BAckA9MehGVPNcnlJQGtmtn-SsIBXVo/exec?studentLogin&prefix=func&name="+nameHolder+"&pass="+passHolder;
         document.getElementById("format").appendChild(script);
 }
 
@@ -125,7 +125,7 @@ function register(){
     var trainerHolder=document.getElementById("trainer").value;;
     var html;
     html = "https://script.google.com/macros/s/AKfycbyslCQDjkX_YM55QGK8BAckA9MehGVPNcnlJQGtmtn-SsIBXVo/exec?createStudent&prefix=func";
-    html+="&name="+encodeURI(nameHolder)+"&pass="+CryptoJS.MD5(passHolder)+"&trainerName="+trainerHolder;
+    html+="&name="+encodeURI(nameHolder)+"&pass="+/*CryptoJS.MD5(*/passHolder/*)*/+"&trainerName="+trainerHolder;
     var url="<a href="+html+">create account</a>";
     document.getElementById("format").innerHTML += url;
 }
