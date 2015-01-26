@@ -31,7 +31,7 @@ var form={
 
 function begin(){
     var html= "<input type=\"text\" name=\"name\" id=\"name\" placeholder=\"NAME\"";
-    html+=" value="+localStorage.getItem("lastname")+">";
+    html+=" value="+localStorage.getItem("username")+">";
     html+="<br><input type=\"text\" name=\"password\" id=\"password\" placeholder=\"PASSWORD\"><br><input type=\"text\" name=\"trainer\" id=\"trainer\" placeholder=\"TRAINER NAME\"><br><br><button type=\"button\" onclick=\"logIn()\">Log in</button><button type=\"button\" onclick=\"register()\">Register</button><br><br>"
     document.getElementById("format").innerHTML = html;
 }
