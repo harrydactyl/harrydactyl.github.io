@@ -1,3 +1,5 @@
+src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/md5.js"
+
 var nameHolder;
 var passHolder;
 var first=true;
@@ -30,6 +32,7 @@ var form={
 }
 
 function begin(){
+    alert(CryptoJS.MD5("Message"));
     var html= "<input type=\"text\" name=\"name\" id=\"name\" placeholder=\"NAME\"";
     html+=" value="+localStorage.getItem("username")+">";
     html+="<br><input type=\"text\" name=\"password\" id=\"password\" placeholder=\"PASSWORD\"><br><input type=\"text\" name=\"trainer\" id=\"trainer\" placeholder=\"TRAINER NAME\"><br><br><button type=\"button\" onclick=\"logIn()\">Log in</button><button type=\"button\" onclick=\"register()\">Register</button><br><br>"
