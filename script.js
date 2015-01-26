@@ -30,7 +30,6 @@ var form={
 }
 
 function begin(){
-    alert(CryptoJS.MD5("Message"));
     var html= "<br><input type=\"text\" name=\"name\" id=\"name\" placeholder=\"NAME\"";
     html+=" value="+localStorage.getItem("username")+">";
     html+="<br><input type=\"text\" name=\"password\" id=\"password\" placeholder=\"PASSWORD\"><br><input type=\"text\" name=\"trainer\" id=\"trainer\" placeholder=\"TRAINER NAME\"><br><br><button type=\"button\" onclick=\"logIn()\">Log in</button><button type=\"button\" onclick=\"register()\">Register</button><br><br>"
@@ -110,7 +109,7 @@ function logIn(){
     localStorage.setItem("username", nameHolder);
     //localStorage.setItem("userpassword", passHolder);
     var script = document.createElement("script");
-        script.src = "https://script.google.com/macros/s/AKfycbyslCQDjkX_YM55QGK8BAckA9MehGVPNcnlJQGtmtn-SsIBXVo/exec?studentLogin&prefix=func&name="+nameHolder+"&pass="+passHolder;
+        script.src = "https://script.google.com/macros/s/AKfycbyslCQDjkX_YM55QGK8BAckA9MehGVPNcnlJQGtmtn-SsIBXVo/exec?studentLogin&prefix=func&name="+nameHolder+"&pass="+CryptoJS.MD5(passHolder);
         document.getElementById("format").appendChild(script);
 }
 
@@ -126,7 +125,7 @@ function register(){
     var trainerHolder=document.getElementById("trainer").value;;
     var html;
     html = "https://script.google.com/macros/s/AKfycbyslCQDjkX_YM55QGK8BAckA9MehGVPNcnlJQGtmtn-SsIBXVo/exec?createStudent&prefix=func";
-    html+="&name="+encodeURI(nameHolder)+"&pass="+passHolder+"&trainerName="+trainerHolder;
+    html+="&name="+encodeURI(nameHolder)+"&pass="+CryptoJS.MD5(passHolder)+"&trainerName="+trainerHolder;
     var url="<a href="+html+">create account</a>";
     document.getElementById("format").innerHTML += url;
 }
