@@ -106,6 +106,8 @@ function logIn(){
     //event.preventDefault();
     nameHolder=encodeURI(document.getElementById("name").value);
     passHolder=document.getElementById("password").value;
+    localStorage.setItem("username", nameHolder);
+    //localStorage.setItem("userpassword", passHolder);
     var script = document.createElement("script");
         script.src = "https://script.google.com/macros/s/AKfycbyslCQDjkX_YM55QGK8BAckA9MehGVPNcnlJQGtmtn-SsIBXVo/exec?studentLogin&prefix=func&name="+nameHolder+"&pass="+passHolder;
         document.getElementById("format").appendChild(script);
@@ -120,8 +122,6 @@ function func(data){
 function register(){
     nameHolder=document.getElementById("name").value;
     passHolder=document.getElementById("password").value;
-    localStorage.setItem("username", nameHolder);
-    localStorage.setItem("userpassword", passHolder);
     var trainerHolder=document.getElementById("trainer").value;;
     var html;
     html = "https://script.google.com/macros/s/AKfycbyslCQDjkX_YM55QGK8BAckA9MehGVPNcnlJQGtmtn-SsIBXVo/exec?createStudent&prefix=func";
