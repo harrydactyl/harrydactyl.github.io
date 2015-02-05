@@ -3,12 +3,11 @@ function test(){
         assert.equal(triangleExists(3,4,5), true);
     });
     QUnit.test("the triangle exists (7,3,20)", function(assert){
-        assert.equal(triangleExists(3,3,5), false);
+        assert.equal(triangleExists(7,3,20), false);
     });
     QUnit.test("the triangle exists (-1,-1,-1)", function(assert){
-        assert.equal(triangleExists(0,4,5), true);
+        assert.equal(triangleExists(-1,-1,-1), true);
     });
-    
     QUnit.test("the triangle is right (3,4,5)", function(assert){
         assert.equal(triangleType(3,4,5), "right");
     });
