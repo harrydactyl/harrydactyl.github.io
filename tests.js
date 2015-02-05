@@ -1,21 +1,21 @@
 function test(){
     QUnit.test("the triangle exists (3,4,5)", function(assert){
-        assert.equal(triangleExists(3,4,5), true);
+        assert.equal(triangleExists(3,4,5), true);//true
     });
     QUnit.test("the triangle exists (7,3,20)", function(assert){
-        assert.equal(triangleExists(7,3,20), false);
+        assert.equal(triangleExists(7,3,20), false);//true
     });
     QUnit.test("the triangle exists (-1,-1,-1)", function(assert){
-        assert.equal(triangleExists(-1,-1,-1), true);
+        assert.equal(triangleExists(-1,-1,-1), true);//false
     });
     QUnit.test("the triangle is right (3,4,5)", function(assert){
-        assert.equal(triangleType(3,4,5), "right");
+        assert.equal(triangleType(3,4,5), "right");//true
     });
     QUnit.test("the triangle is obtuse (6,6,6)", function(assert){
-        assert.equal(triangleType(6,6,6), "obtuse");
+        assert.equal(triangleType(6,6,6), "obtuse");//false
     });
     QUnit.test("the triangle is acute (3,2,3)", function(assert){
-        assert.equal(triangleType(3,2,3), "acute");
+        assert.equal(triangleType(3,2,3), "acute");//true
     });
 }
 
