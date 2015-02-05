@@ -1,8 +1,3 @@
-$(document).ready(function(){
-    
-    startTests();
-});
-
 function startTests(){
     //triangle exists
     QUnit.test("triangle exists (3,4,5)", function(assert){
