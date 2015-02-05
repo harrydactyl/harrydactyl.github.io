@@ -29,10 +29,12 @@ function triangleExists(a,b,c){
 }
 
 function triangleType(a,b,c){
-    if(Math.pow(a,2)+Math.pow(b,2)==Math.pow(c,2)){
+    var array=[a,b,c]
+    array.sort();
+    if(Math.pow(array[0],2)+Math.pow(array[1],2)==Math.pow(array[2],2)){
         return("right");
     }
-    else if(Math.pow(a,2)+Math.pow(b,2)<Math.pow(c,2)){
+    else if(Math.pow(array[0],2)+Math.pow(array[1],2)<Math.pow(array[2],2)){
         return("obtuse");
     }
     else{
