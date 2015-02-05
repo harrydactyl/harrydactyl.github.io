@@ -2,7 +2,7 @@ function test(){
     QUnit.test("the triangle exists (6,6,6)", function(assert){
         assert.equal(triangleExists(6,6,6), true);//true
     });
-    QUnit.test("the triangle exists (7,3,20)", function(assert){
+    QUnit.test("the triangle doen't exist (7,3,20)", function(assert){
         assert.equal(triangleExists(7,3,20), false);//true
     });
     QUnit.test("the triangle exists (-1,-1,-1)", function(assert){
