@@ -1,6 +1,6 @@
 function test(){
-    QUnit.test("the triangle exists (3,4,5)", function(assert){
-        assert.equal(triangleExists(3,4,5), true);//true
+    QUnit.test("the triangle exists (6,6,6)", function(assert){
+        assert.equal(triangleExists(6,6,6), true);//true
     });
     QUnit.test("the triangle exists (7,3,20)", function(assert){
         assert.equal(triangleExists(7,3,20), false);//true
