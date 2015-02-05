@@ -12,10 +12,10 @@ function test(){
     QUnit.test("the triangle is right (3,4,5)", function(assert){
         assert.equal(triangleType(3,4,5), "right");
     });
-    QUnit.test("the triangle is obtuse (3,3,10)", function(assert){
+    QUnit.test("the triangle is obtuse (6,6,6)", function(assert){
         assert.equal(triangleType(3,3,10), "obtuse");
     });
-    QUnit.test("the triangle is acute (3,3,3)", function(assert){
+    QUnit.test("the triangle is acute (3,2,3)", function(assert){
         assert.equal(triangleType(3,3,3), "acute");
     });
 }
