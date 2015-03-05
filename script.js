@@ -1,17 +1,6 @@
 (function() {
     var canvas = document.getElementById('paint');
     var ctx = canvas.getContext('2d');
-	var imageObj = new Image();
-	
-	/* Loading the Image*/
-	imageObj.onload = function() {
-        ctx.drawImage(imageObj, 0, 0);
-		/* Setting the paint to be Underneath the Drawing */
-		ctx.globalCompositeOperation="destination-over";
-		};
-	  
-      imageObj.src = 'https://lh5.googleusercontent.com/-P5ucC3TjCLU/UjHE0rENTaI/AAAAAAAAAts/mH2A_OORkQY/s800/color.png';
-
 
     var mouse = {x: 0, y: 0};
     var last_mouse = {x: 0, y: 0};
