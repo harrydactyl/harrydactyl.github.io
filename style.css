@@ -10,6 +10,7 @@ html, body {
 }
 
 #tmp_canvas {
+    border: 10px solid gray;
 	position: absolute;
 	left: 0px; right: 0;
 	bottom: 0; top: 0;
