@@ -1,0 +1,23 @@
+body {
+	width:600px;
+	margin:0 auto;
+	padding:0px;
+	background-color:gray;
+	}
+#container {
+	margin-top:50px;
+	height:800px;
+	display:block
+	float:left;
+	background-color:white;
+	}
+#color {
+	display:block;
+	}
+#colorChoice {
+	width:150px;
+	margin:0 auto;
+	}
+input {
+	margin-left:20px;
+	}
