@@ -1,26 +1,17 @@
-body {
-	width:600px;
-	margin:0 auto;
-	padding:0px;
-	background-color:gray;
-	}
-#sketch {
-    outline-width:thick;
+html, body {
+	width: 100%;
+	height: 100%;
 }
-#container {
-	margin-top:50px;
-	height:800px;
-	display:block
-	float:left;
-	background-color:white;
-	}
-#color {
-	display:block;
-	}
-#colorChoice {
-	width:150px;
-	margin:0 auto;
-	}
-input {
-	margin-left:20px;
-	}
+
+#sketch {
+	border: 10px solid gray;
+	height: 100%;
+	position: relative;
+}
+
+#tmp_canvas {
+	position: absolute;
+	left: 0px; right: 0;
+	bottom: 0; top: 0;
+	cursor: crosshair;
+}
