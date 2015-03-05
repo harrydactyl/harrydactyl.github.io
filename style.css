@@ -4,6 +4,9 @@ body {
 	padding:0px;
 	background-color:gray;
 	}
+#sketch {
+    outline-width:thick;
+}
 #container {
 	margin-top:50px;
 	height:800px;
